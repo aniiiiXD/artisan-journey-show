@@ -18,11 +18,16 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Custom elegant variants for portfolio
+        elegant: "bg-gradient-gold text-charcoal font-semibold shadow-gold hover:shadow-elegant hover:scale-105 transition-all duration-300",
+        elegantOutline: "border-2 border-gold text-gold bg-transparent hover:bg-gold hover:text-charcoal transition-all duration-300 shadow-subtle hover:shadow-gold",
+        hero: "bg-gold text-charcoal font-semibold px-8 py-4 text-base hover:bg-gold/90 hover:shadow-gold hover:scale-105 transition-all duration-300"
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
+        xl: "h-12 rounded-lg px-10 text-lg",
         icon: "h-10 w-10",
       },
     },
