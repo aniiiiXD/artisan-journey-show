@@ -36,46 +36,62 @@ const Journey = () => {
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Horizontal Timeline */}
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-8 lg:left-1/2 lg:transform lg:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/50 to-transparent"></div>
+          {/* Timeline Line - Horizontal */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-gold via-gold/50 to-gold transform -translate-y-1/2 hidden lg:block"></div>
+          
+          {/* Mobile Timeline Line - Vertical */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/50 to-transparent lg:hidden"></div>
 
-          {/* Timeline Items */}
-          <div className="space-y-16">
+          {/* Timeline Items - Horizontal Layout */}
+          <div className="grid lg:grid-cols-3 gap-8 lg:gap-0">
             {journeyItems.map((item, index) => (
               <div 
                 key={index} 
-                className={`relative flex items-center animate-slide-up`}
+                className="relative animate-slide-up lg:flex lg:flex-col lg:items-center"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* Timeline Icon */}
-                <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center text-2xl shadow-gold lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 z-10">
+                <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center text-2xl shadow-gold mb-6 lg:mb-8 z-10 relative">
                   {item.icon}
+                  {/* Mobile connector line */}
+                  <div className="absolute -left-8 top-1/2 w-8 h-0.5 bg-gold transform -translate-y-1/2 lg:hidden"></div>
                 </div>
 
-                {/* Content */}
-                <div className={`ml-8 lg:ml-0 lg:w-5/12 ${index % 2 === 0 ? 'lg:mr-auto lg:pr-16' : 'lg:ml-auto lg:pl-16'}`}>
-                  <div className="bg-card rounded-2xl p-8 shadow-subtle hover:shadow-elegant transition-all duration-500 elegant-hover">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-gold font-semibold text-sm tracking-wide uppercase">
+                {/* Content Card */}
+                <div className="ml-8 lg:ml-0 lg:max-w-sm">
+                  <div className="bg-card rounded-2xl p-6 lg:p-8 shadow-subtle hover:shadow-elegant transition-all duration-500 elegant-hover border border-gold/10 hover:border-gold/30">
+                    <div className="text-center lg:text-center mb-4">
+                      <span className="text-gold font-semibold text-xs lg:text-sm tracking-wide uppercase block mb-2">
                         {item.subtitle}
                       </span>
-                      <span className="text-gray-subtle text-sm font-medium">
+                      <span className="text-gray-subtle text-xs lg:text-sm font-medium">
                         {item.year}
                       </span>
                     </div>
                     
-                    <h3 className="font-display text-2xl font-semibold text-off-white mb-4 leading-tight">
+                    <h3 className="font-display text-xl lg:text-2xl font-semibold text-off-white mb-4 leading-tight text-center lg:text-center">
                       {item.title}
                     </h3>
                     
-                    <p className="text-gray-subtle leading-relaxed">
+                    <p className="text-gray-subtle leading-relaxed text-sm lg:text-base text-center lg:text-center">
                       {item.description}
                     </p>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          {/* Progress Dots for Desktop */}
+          <div className="hidden lg:flex justify-center items-center mt-12 space-x-4">
+            {journeyItems.map((_, index) => (
+              <div 
+                key={index}
+                className="w-3 h-3 rounded-full bg-gold/30 animate-pulse"
+                style={{ animationDelay: `${index * 300}ms` }}
+              ></div>
             ))}
           </div>
         </div>
