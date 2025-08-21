@@ -76,7 +76,7 @@ const HeroJourney = () => {
                 <br />
                 Crafting innovative solutions through technology and mathematical foundations across Cloud, Distributed backends and Crypto.
               </p>
-              <p>Hit me up if you are interested in Crypto or Game Theory</p>
+              <p>Hit me up if you are interested in Crypto , Game Theory or Markov Chains</p>
 
               {/* Call to Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
