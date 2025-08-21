@@ -21,60 +21,79 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const projects: Project[] = [
-    {
-      id: 1,
-      title: "AI-Powered Ad Auction Platform",
-      subtitle: "Intelligent Advertisement Ecosystem",
-      description: "Revolutionary platform combining graph theory and real-time auction mechanics to optimize advertisement placement and maximize revenue through sophisticated algorithmic approaches.",
-      accomplishments: [
-        "Engineered a Rust-based graph preference engine using bipartite ranking graphs",
-        "Developed a sealed-bid ad auction system with real-time order book logic",
-        "Implemented advanced preference algorithms for optimal ad-user matching",
-        "Achieved 40% improvement in click-through rates compared to traditional systems"
-      ],
-      skills: ["Rust", "Graph Theory", "Real-time Systems", "Algorithm Design", "Auction Theory"],
-      links: {
-        github: "https://github.com",
-        demo: "https://demo.example.com"
+    
+      {
+        "id": 1,
+        "title": "FIRA RoboWorld Cup 2024, Brazil Challenge for 1:8 Self Driving Car",
+        "subtitle": "Self-Driving Car Challenge",
+        "description": "Represented India and IIT Bombay at the international finals of the FIRA Autonomous Car Challenge in Brazil[cite: 4]. The project involved designing and implementing algorithms for a 1:8 scale self-driving car.",
+        "accomplishments": [
+          "Designed and implemented a Goal Marking Algorithm and Sign Detection Filter using NumPy and Scikit-Learn[cite: 4].",
+          "Developed and tested 5 ROS nodes using Python and C++ for sub-system integration[cite: 4].",
+          "Utilized parallel programming to reduce computation time of asynchronous functions by 40%[cite: 4]."
+        ],
+        "skills": ["Python", "C++", "ROS", "NumPy", "Scikit-Learn", "Parallel Programming", "Linux"],
+        "links": {},
+        "icon": "🏎️"
       },
-      icon: "🎯"
-    },
-    {
-      id: 2, 
-      title: "DeFi Real-World Asset Platform",
-      subtitle: "Blockchain Innovation for Traditional Assets",
-      description: "Comprehensive platform for tokenizing real-world assets, featuring advanced liquidity mechanisms and sustainable tokenomics designed for institutional adoption.",
-      accomplishments: [
-        "Architected tokenization framework for real-world assets",
-        "Designed sustainable tokenomics model with built-in liquidity incentives", 
-        "Developed automated market-making algorithms for asset liquidity",
-        "Led product strategy and technical implementation across full stack"
-      ],
-      skills: ["Solidity", "DeFi Protocols", "Tokenomics", "Smart Contracts", "Product Strategy"],
-      links: {
-        live: "https://swapso.io",
-        github: "https://github.com"
+      {
+        "id": 2,
+        "title": "AI-Powered Ad Auction Platform",
+        "subtitle": "Intelligent Ad Auction System",
+        "description": "A self-project focused on building an intelligent ad auction system using AI agents and advanced data structures[cite: 8].",
+        "accomplishments": [
+          "Developed AI agent workflows using LangChain and LLMs for user intent parsing and preference extraction[cite: 8].",
+          "Built a Rust-based graph preference engine using bipartite ranking graphs and min-heaps[cite: 8].",
+          "Engineered a sealed-bid ad auction system in Rust with real-time order book logic and priority queues[cite: 8]."
+        ],
+        "skills": ["Rust", "LangChain", "LLMs", "Graph Theory", "Real-time Systems", "Auction Theory"],
+        "links": {},
+        "icon": "📈"
       },
-      icon: "⛓️"
-    },
-    {
-      id: 3,
-      title: "Medshield AI Data Pipeline",
-      subtitle: "Healthcare Technology Automation",
-      description: "Enterprise-grade data processing system that seamlessly integrates web scraping, LLM processing, and automated workflows for healthcare data management.",
-      accomplishments: [
-        "Built scalable web scraping pipelines handling 10M+ records daily",
-        "Integrated LLM scripts for intelligent data processing and classification",
-        "Implemented real-time data validation and quality assurance systems",
-        "Reduced manual data processing time by 85% through automation"
-      ],
-      skills: ["Python", "Web Scraping", "LLM Integration", "Data Engineering", "Healthcare Tech"],
-      links: {
-        github: "https://github.com"
+      {
+        "id": 3,
+        "title": "DePIN-Based Uptime Monitoring Protocol",
+        "subtitle": "Distributed Systems and Solana",
+        "description": "A decentralized uptime monitoring network that leverages DePIN principles and a hybrid TypeScript/Rust stack[cite: 12, 13].",
+        "accomplishments": [
+          "Engineered a decentralized uptime monitoring network that pings websites every 180s[cite: 13].",
+          "Designed a WebSocket-driven hub to dynamically route pings to available validators[cite: 13].",
+          "Authored a Rust-based Solana smart contract for validator staking logic and reward incentivization[cite: 13]."
+        ],
+        "skills": ["TypeScript", "Rust", "Solana", "Distributed Systems", "WebSockets", "Smart Contracts"],
+        "links": {},
+        "icon": "🌐"
       },
-      icon: "🏥"
-    }
-  ];
+      {
+        "id": 4,
+        "title": "Compactification Strategy for Apache Iceberg",
+        "subtitle": "Database Optimization",
+        "description": "A self-project to optimize Apache Iceberg compaction using a Rust-based algorithm[cite: 9].",
+        "accomplishments": [
+          "Built a Rust-based optimization algorithm that improved partition selection and reduced runtimes by 35%[cite: 9].",
+          "Designed a comprehensive scoring model with file size penalties and delete ratios[cite: 9].",
+          "Implemented caching strategies for partition metadata, cutting algorithm execution time from 2.5 hours to 45 minutes[cite: 9]."
+        ],
+        "skills": ["Rust", "Database Optimization", "Algorithms", "Greedy Methods", "Caching"],
+        "links": {},
+        "icon": "🗜️"
+      },
+      {
+        "id": 5,
+        "title": "Multi-Threaded Proxy Server with Caching",
+        "subtitle": "Systems Programming",
+        "description": "A self-project to build a multi-threaded HTTP proxy server in C that efficiently handles concurrent clients[cite: 10].",
+        "accomplishments": [
+          "Built a multi-threaded HTTP proxy server in C handling up to 120 concurrent clients using POSIX threads and semaphores[cite: 10].",
+          "Integrated a custom LRU cache from scratch in C, reducing average page load latency by 45%[cite: 10].",
+          "Achieved 100% thread-safe cache access using fine-grained per-object locking[cite: 11]."
+        ],
+        "skills": ["C", "Multi-threading", "Systems Programming", "POSIX Threads", "Caching", "LRU Cache"],
+        "links": {},
+        "icon": "🔄"
+      }
+    ]
+  ;
 
   return (
     <section id="projects" className="py-20 lg:py-32 px-6 lg:px-12 bg-charcoal-light/30">
