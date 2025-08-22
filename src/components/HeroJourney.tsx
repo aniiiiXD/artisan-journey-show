@@ -72,7 +72,7 @@ const HeroJourney = () => {
                   className="relative w-48 h-60 lg:w-64 lg:h-80 object-cover rounded-2xl shadow-elegant hover:shadow-gold transition-all duration-500 hover:scale-105"
                 />
               </div>
-            </div>
+            </div> 
 
             {/* Hero Content */}
             <div className="space-y-6 animate-slide-up text-center lg:text-left">
