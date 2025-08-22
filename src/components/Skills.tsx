@@ -23,31 +23,48 @@ const Skills = () => {
     ]}
   ];
 
-  const achievements = [
-    "JEE Advanced: Top 2% (99.8 percentile)",
-    "JEE Mains: Top 1% (99.9 percentile)", 
-    "Mathematics Olympiad: State Level Winner",
-    "Coding Contest: Multiple top 10 finishes"
-  ];
-
+  
   const hackathons = [
-    "Smart India Hackathon 2024 - Finalist",
+    "Top 2 among 500 teams in Pan India AI Buildathon by 100xEngineers",
     "IIT Bombay TechFest Hackathon - Winner", 
     "Blockchain Innovation Challenge - 2nd Place",
     "AI for Healthcare Hackathon - Top 5"
   ];
 
-  const responsibilities = [
-    "Events Coordinator - Techfest, IIT Bombay",
-    "Technical Lead - Coding Club, IIT Bombay",
-    "Mentor - First Year Students Program",
-    "Volunteer - Social Innovation Cell"
-  ];
+  // const responsibilities = [
+  //   "",
+  //   "",
+  //   ""
+  // ];
 
   return (
     <section className="py-20 lg:py-32 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
+
+        <div className="bg-gradient-charcoal rounded-2xl p-8 border border-gold/20 shadow-elegant my-6">
+              <h4 className="font-display text-xl font-semibold text-off-white mb-4">
+                Ready to Collaborate?
+              </h4>
+              <p className="text-gray-subtle mb-6">
+                Let's discuss how we can build innovative solutions together.
+              </p>
+              <div className="flex gap-4">
+                <a
+                  href="mailto:your.email@example.com"
+                  className="inline-flex items-center gap-2 bg-gold text-charcoal font-semibold px-6 py-3 rounded-lg hover:bg-gold/90 transition-all duration-300 hover:scale-105"
+                >
+                  Get in Touch
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+
+
+
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-off-white mb-6">
             Skills & Recognition  
@@ -95,7 +112,7 @@ const Skills = () => {
               ))}
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="font-display text-2xl font-semibold text-off-white mb-6">
                 Academic Achievements
               </h3>
@@ -110,7 +127,7 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Hackathons & Leadership */}
@@ -132,7 +149,7 @@ const Skills = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h3 className="font-display text-2xl font-semibold text-off-white mb-6">
                 Leadership & Responsibility
               </h3>
@@ -147,28 +164,10 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {/* CTA Section */}
-            <div className="bg-gradient-charcoal rounded-2xl p-8 border border-gold/20 shadow-elegant">
-              <h4 className="font-display text-xl font-semibold text-off-white mb-4">
-                Ready to Collaborate?
-              </h4>
-              <p className="text-gray-subtle mb-6">
-                Let's discuss how we can build innovative solutions together.
-              </p>
-              <div className="flex gap-4">
-                <a
-                  href="mailto:your.email@example.com"
-                  className="inline-flex items-center gap-2 bg-gold text-charcoal font-semibold px-6 py-3 rounded-lg hover:bg-gold/90 transition-all duration-300 hover:scale-105"
-                >
-                  Get in Touch
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+            
           </div>
         </div>
       </div>

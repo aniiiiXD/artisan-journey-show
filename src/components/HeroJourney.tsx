@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import professionalPortrait from "@/assets/professional-portrait.jpg";
+import { useState } from 'react';
 
 const HeroJourney = () => {
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: 'smooth' });
@@ -9,15 +12,15 @@ const HeroJourney = () => {
 
   const journeyItems = [
     {
-      title: "Researcher/Developer",
+      title: "Researcher/Developer at Eterna Labs",
       subtitle: "Low Level Engineering", 
-      description: "Working on low latency backends for On-Chain and Off Chain data feeds on hyperliquid Validators , Low level option pricing algorithms , Scalabale Cloud solutions for the same ",
+      description: "Working on low latency backends along side professionals from MIT and Yale for On-Chain and Off Chain data feeds on hyperliquid Validators , Low level option pricing algorithms , Scalabale Cloud solutions for the same ",
       year: "August 2025 - Present",
       icon: "💻"
     },
     {
       title: "Medshield AI - Software Developer Intern",
-      subtitle: "The Practical Leap", 
+      subtitle: "Working at a London based Startup", 
       description: "Developed comprehensive web scraping pipelines and integrated LLM scripts for seamless data flow. Engineered automated systems that bridge theoretical knowledge with real-world applications in healthcare technology.",
       year: "Nov 2024 to Jan 2025",
       icon: "💻"
@@ -28,6 +31,20 @@ const HeroJourney = () => {
       description: "Led product design and architecture for real-world asset tokenization platform. Conducted deep research into tokenomics and liquidity maintenance, demonstrating leadership in emerging blockchain technologies.",
       year: "2024-2025",
       icon: "🚀"
+    },
+    {
+      title: "Game theory in crypto and Markov Chains",
+      subtitle: "Personal research interests alongside regular academic",
+      description: "Mechanisms around Auctions , bandwidth distribution , complex decisions caught my eye.",
+      year: "2024-present",
+      icon: "🚀"
+    },
+    {
+      title: "Self driving Car: Intro to systems ",
+      subtitle: "Behavorial planning Engineer at SeDriCa",
+      description: "Worked as a Systems Engineer on modelling Finite State Machines , Handling Concurrency and Parallel execution . Represented India internationally at robotics world cup at Brazil in 2024",
+      year: "2023 - 2024",
+      icon: "🎓"
     },
     {
       title: "IIT Bombay - A Journey in Mathematics",
@@ -44,7 +61,7 @@ const HeroJourney = () => {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
           
           {/* Left Side - Hero Introduction */}
-          <div className="space-y-8">
+          <div className="space-y-8 w-full lg:w-auto">
             {/* Professional Portrait */}
             <div className="flex justify-center lg:justify-start animate-fade-in mb-8">
               <div className="relative">
@@ -52,7 +69,7 @@ const HeroJourney = () => {
                 <img
                   src={professionalPortrait}
                   alt="Professional portrait"
-                  className="relative w-64 h-80 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-elegant hover:shadow-gold transition-all duration-500 hover:scale-105"
+                  className="relative w-48 h-60 lg:w-64 lg:h-80 object-cover rounded-2xl shadow-elegant hover:shadow-gold transition-all duration-500 hover:scale-105"
                 />
               </div>
             </div>
@@ -109,57 +126,71 @@ const HeroJourney = () => {
 
           {/* Right Side - Journey Timeline */}
           <div className="space-y-8">
-            {/* Journey Header */}
-            <div className="text-center lg:text-left animate-fade-in">
-              <h2 className="font-display text-3xl lg:text-4xl font-bold text-off-white mb-4">
-                My Journey
-              </h2>
-              <p className="text-lg text-gray-subtle">
-                A timeline of growth, learning, and innovation across academia, industry, and entrepreneurship.
-              </p>
-            </div>
-
-            {/* Vertical Timeline for Side Layout */}
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold via-gold/50 to-transparent"></div>
-
-              {/* Timeline Items */}
-              <div className="space-y-12">
-                {journeyItems.map((item, index) => (
+            <h2 className="text-3xl font-bold text-off-white mb-8 text-center lg:text-left">
+              My Journey So Far
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* First Column */}
+              <div className="space-y-6">
+                {journeyItems.slice(0, 3).map((item, index) => (
                   <div 
-                    key={index} 
-                    className="relative flex items-start animate-slide-up"
-                    style={{ animationDelay: `${index * 200}ms` }}
+                    key={index}
+                    className="group bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-gold/50 transition-all duration-300 cursor-pointer"
+                    onMouseEnter={() => setHoveredCard(index)}
+                    onMouseLeave={() => setHoveredCard(null)}
                   >
-                    {/* Timeline Icon */}
-                    <div className="flex-shrink-0 w-16 h-16 bg-gold rounded-full flex items-center justify-center text-2xl shadow-gold z-10">
-                      {item.icon}
-                    </div>
-
-                    {/* Content */}
-                    <div className="ml-6 flex-1">
-                      <div className="bg-card rounded-xl p-6 shadow-subtle hover:shadow-elegant transition-all duration-500 elegant-hover border border-gold/10 hover:border-gold/30">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-gold font-semibold text-sm tracking-wide uppercase">
-                            {item.subtitle}
-                          </span>
-                          <span className="text-gray-subtle text-sm font-medium">
-                            {item.year}
-                          </span>
+                    <div className="flex items-start gap-4">
+                      <div className={`text-2xl transition-transform ${hoveredCard === index ? 'scale-110' : 'group-hover:scale-110'}`}>
+                        {item.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-off-white">{item.title}</h3>
+                        <p className="text-gold text-sm mb-2">{item.year}</p>
+                        <p className="text-gold/80 text-sm font-medium mb-2">{item.subtitle}</p>
+                        <div className="relative overflow-hidden">
+                          <div className={`text-gray-300 text-sm transition-all duration-300 ${hoveredCard === index ? 'max-h-96' : 'max-h-0 opacity-0'}`}>
+                            <p className="pt-2">
+                              {item.description}
+                            </p>
+                          </div>
                         </div>
-                        
-                        <h3 className="font-display text-xl font-semibold text-off-white mb-3 leading-tight">
-                          {item.title}
-                        </h3>
-                        
-                        <p className="text-gray-subtle leading-relaxed text-sm">
-                          {item.description}
-                        </p>
                       </div>
                     </div>
                   </div>
                 ))}
+              </div>
+              
+              {/* Second Column */}
+              <div className="space-y-6">
+                {journeyItems.slice(3).map((item, index) => {
+                  const actualIndex = index + 3;
+                  return (
+                    <div 
+                      key={actualIndex}
+                      className="group bg-gray-800/50 backdrop-blur-sm p-6 rounded-xl border border-gray-700/50 hover:border-gold/50 transition-all duration-300 cursor-pointer"
+                      onMouseEnter={() => setHoveredCard(actualIndex)}
+                      onMouseLeave={() => setHoveredCard(null)}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className={`text-2xl transition-transform ${hoveredCard === actualIndex ? 'scale-110' : 'group-hover:scale-110'}`}>
+                          {item.icon}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-off-white">{item.title}</h3>
+                          <p className="text-gold text-sm mb-2">{item.year}</p>
+                          <p className="text-gold/80 text-sm font-medium mb-2">{item.subtitle}</p>
+                          <div className="relative overflow-hidden">
+                            <div className={`text-gray-300 text-sm transition-all duration-300 ${hoveredCard === actualIndex ? 'max-h-96' : 'max-h-0 opacity-0'}`}>
+                              <p className="pt-2">
+                                {item.description}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
